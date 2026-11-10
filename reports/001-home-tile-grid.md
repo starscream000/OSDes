@@ -135,6 +135,10 @@ No ranges intersect, and every tile ends at or before column 7 and row 7.
   `relativeFontDirectory`). These were already there before this task.
 - `OSContent/App.qml` gets a `qmllint` "unused import OS" note. This was
   already there before this task.
+- While I worked, Qt Design Studio was open on this project and created an
+  untracked `OS.qrc` at the top level, listing the project's QML files. I did
+  not commit it or ignore it. The master should decide whether it belongs in
+  `.gitignore`.
 - Wheel scrolling jumps rather than glides. Smooth scrolling belongs in
   milestone 2 (motion).
 - The screen has a fixed 1920×1080 size from `Constants`. Resizing the
