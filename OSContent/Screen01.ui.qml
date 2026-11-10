@@ -5,63 +5,43 @@ this file manually, you might introduce QML code that is not supported by Qt Des
 Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
 */
 
+// The shell root: the page area above, the bar along the bottom.
+// Which page shows is read from Shell.page; components change it.
+
 import QtQuick
 import OS
 
 Rectangle {
-    id: homeScreen
+    id: shellRoot
     width: Constants.width
     height: Constants.height
 
     color: Theme.background
 
-    HomeModel {
-        id: homeModel
-    }
-
-    Text {
-        id: pageTitle
-        x: Theme.pageMargin
-        y: Theme.headerTop
-        text: qsTr("Start")
-        color: Theme.textPrimary
-        font.family: Theme.fontFamily
-        font.pixelSize: Theme.titleSize
-        font.weight: Font.Light
-    }
-
-    Row {
-        id: userArea
-        anchors.right: parent.right
-        anchors.rightMargin: Theme.pageMargin
-        anchors.verticalCenter: pageTitle.verticalCenter
-        spacing: Theme.userSpacing
-
-        Text {
-            id: userName
-            anchors.verticalCenter: parent.verticalCenter
-            text: qsTr("User")
-            color: Theme.textPrimary
-            font.family: Theme.fontFamily
-            font.pixelSize: Theme.userNameSize
-            font.weight: Font.Light
-        }
-
-        Rectangle {
-            id: userSquare
-            width: Theme.userSquareSize
-            height: Theme.userSquareSize
-            color: Theme.userPlaceholder
-        }
-    }
-
-    TileArea {
-        id: tileArea
+    Item {
+        id: pageArea
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
+        anchors.bottom: bar.top
+
+        HomePage {
+            id: homePage
+            anchors.fill: parent
+            visible: Shell.page === Shell.homePage
+        }
+
+        MetroStartReference {
+            id: referencePage
+            anchors.fill: parent
+            visible: Shell.page === Shell.referencePage
+        }
+    }
+
+    Bar {
+        id: bar
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.topMargin: Theme.tileAreaTop
-        groups: homeModel
     }
 }
