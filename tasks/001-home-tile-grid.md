@@ -1,6 +1,6 @@
 # Task 001: Home screen with a static tile grid
 
-Status: draft
+Status: in review
 Branch: task/001-home-tile-grid
 Depends on: none
 

@@ -5,4 +5,4 @@ blocked.
 
 | Task | Title | State | Pull request | Notes |
 |---|---|---|---|---|
-| 001 | Home screen with a static tile grid | draft | — | Waiting for the owner to approve the brief |
+| 001 | Home screen with a static tile grid | in review | [#1](https://github.com/starscream000/OSDes/pull/1) | Master approved. Waiting for the owner to run it and order the merge |
