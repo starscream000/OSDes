@@ -99,7 +99,57 @@ QtObject {
     // Width of the hover outline, drawn inside the tile's edge.
     readonly property int tileOutlineWidth: 2
 
+    // ---- Bar --------------------------------------------------------------
+
+    // Height of the bar, and the side of each square bar button.
+    readonly property int barHeight: 48
+    readonly property color barBackground: "#22252B"
+    readonly property color barButtonHover: "#30343C"
+    readonly property color barButtonPressed: "#3E434D"
+    readonly property color barButtonActive: "#2B2F37"
+    // Line along a bar button's bottom edge: the active page, or the app in front.
+    readonly property color barIndicatorActive: "#4C8DFF"
+    readonly property color barIndicatorFront: "#FFFFFF"
+    readonly property int barIndicatorHeight: 2
+    // Space between items in the bar's right-hand group.
+    readonly property int barSpacing: 8
+    // Right margin of the clock.
+    readonly property int barClockMargin: 16
+    // Side padding of a bar button that shows text.
+    readonly property int barTextPadding: 16
+    readonly property int barTextSize: 15
+    // First letter on a running app's button.
+    readonly property int barLetterSize: 20
+    // Small solid square on the Home button.
+    readonly property int barHomeMarkSize: 14
+    // The three short lines on the quick settings button.
+    readonly property int barLineWidth: 18
+    readonly property int barLineHeight: 2
+    readonly property int barLineSpacing: 4
+    readonly property int clockTimeSize: 15
+    readonly property int clockDateSize: 12
+
+    // ---- Home panels ------------------------------------------------------
+
+    // Dimmed text: tabs that are not current, and placeholder lines.
+    readonly property color textDimmed: "#6B717B"
+    // How much of the next panel stays visible beside the current one.
+    readonly property int panelPeek: 160
+    // Top of the panels, measured from the top of the page area.
+    readonly property int panelTop: 140
+    // Space left below the last row of groups in the Apps panel.
+    readonly property int panelBottomMargin: 60
+    readonly property int tabSize: 48
+    readonly property int tabSpacing: 40
+    readonly property int panelTextSize: 20
+
     // ---- Motion -----------------------------------------------------------
+
+    // Duration of the move from one home panel to another, in milliseconds.
+    readonly property int panelMoveDuration: 250
+    // A drag released faster than this (pixels per second) moves to the
+    // next panel even if it covered less than half a panel.
+    readonly property real panelFlickVelocity: 400
 
     // Scale of a tile while it is held down.
     readonly property real tilePressedScale: 0.97
