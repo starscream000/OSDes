@@ -6,66 +6,62 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 */
 
 import QtQuick
-import QtQuick.Controls
 import OS
 
 Rectangle {
-    id: rectangle
+    id: homeScreen
     width: Constants.width
     height: Constants.height
 
-    color: Constants.backgroundColor
+    color: Theme.background
 
-    Button {
-        id: button
-        text: qsTr("Press me")
-        anchors.verticalCenter: parent.verticalCenter
-        checkable: true
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        Connections {
-            target: button
-            onClicked: animation.start()
-        }
+    HomeModel {
+        id: homeModel
     }
 
     Text {
-        id: label
-        text: qsTr("Hello OS")
-        anchors.top: button.bottom
-        font.family: Constants.font.family
-        anchors.topMargin: 45
-        anchors.horizontalCenter: parent.horizontalCenter
+        id: pageTitle
+        x: Theme.pageMargin
+        y: Theme.headerTop
+        text: qsTr("Start")
+        color: Theme.textPrimary
+        font.family: Theme.fontFamily
+        font.pixelSize: Theme.titleSize
+        font.weight: Font.Light
+    }
 
-        SequentialAnimation {
-            id: animation
+    Row {
+        id: userArea
+        anchors.right: parent.right
+        anchors.rightMargin: Theme.pageMargin
+        anchors.verticalCenter: pageTitle.verticalCenter
+        spacing: Theme.userSpacing
 
-            ColorAnimation {
-                id: colorAnimation1
-                target: rectangle
-                property: "color"
-                to: "#2294c6"
-                from: Constants.backgroundColor
-            }
+        Text {
+            id: userName
+            anchors.verticalCenter: parent.verticalCenter
+            text: qsTr("User")
+            color: Theme.textPrimary
+            font.family: Theme.fontFamily
+            font.pixelSize: Theme.userNameSize
+            font.weight: Font.Light
+        }
 
-            ColorAnimation {
-                id: colorAnimation2
-                target: rectangle
-                property: "color"
-                to: Constants.backgroundColor
-                from: "#2294c6"
-            }
+        Rectangle {
+            id: userSquare
+            width: Theme.userSquareSize
+            height: Theme.userSquareSize
+            color: Theme.userPlaceholder
         }
     }
-    states: [
-        State {
-            name: "clicked"
-            when: button.checked
 
-            PropertyChanges {
-                target: label
-                text: qsTr("Button Checked")
-            }
-        }
-    ]
+    TileArea {
+        id: tileArea
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.topMargin: Theme.tileAreaTop
+        groups: homeModel
+    }
 }

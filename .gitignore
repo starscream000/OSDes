@@ -1,0 +1,22 @@
+# Build output
+build/
+build-*/
+out/
+*.qmlc
+*.jsc
+
+# Qt Design Studio / Qt Creator per-user files
+*.qtds
+*.user
+*.user.*
+CMakeLists.txt.user*
+CMakeUserPresets.json
+.qtc_clangd/
+.qtcreator/
+
+# Editors and OS
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

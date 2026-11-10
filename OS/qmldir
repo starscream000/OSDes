@@ -1,4 +1,6 @@
 module OS
 singleton Constants 1.0 Constants.qml
+singleton Theme 1.0 Theme.qml
+HomeModel 1.0 HomeModel.qml
 EventListSimulator 1.0 EventListSimulator.qml
 EventListModel 1.0 EventListModel.qml
