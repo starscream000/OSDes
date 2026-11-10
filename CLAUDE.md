@@ -20,8 +20,11 @@ other programs' windows.
 
 - Run: open `OS.qmlproject` in Qt Design Studio and press Run (Ctrl+R). The
   owner does this; a worker usually cannot see the running interface.
-- Check: if `qmllint` is on the PATH, run it on every QML file you changed.
-  If it is not installed, say so in your report instead of skipping silently.
+- Check: run `qmllint -I .` on every QML file you changed. It is usually not
+  on the PATH. On the owner's Windows machine it ships with Qt Design Studio
+  at `C:/Qt/Tools/QtDesignStudio/qt6_design_studio_reduced_version/bin/`,
+  next to `qmltestrunner`. If you cannot find it, say so in your report
+  instead of skipping silently.
 - Build from the command line: not set up yet.
 - Tests: none yet.
 

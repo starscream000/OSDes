@@ -28,7 +28,7 @@ daily, which then becomes the shell of a real system.
 
 | # | Milestone | State |
 |---|---|---|
-| 1 | Desktop home screen, static | active |
+| 1 | Desktop home screen, static: bar, panels, tiles | active |
 | 2 | Motion and interaction on the home screen | later |
 | 3 | One layout for every screen size and input type | later |
 | 4 | Live tiles: the widget contract and a first tile with real data | later |
@@ -41,18 +41,19 @@ when it becomes active.
 
 ## Active milestone: 1. Desktop home screen, static
 
-**Delivers:** the home screen as it looks on a 1920×1080 desktop: a
-titled page of tiles in groups, in four sizes, that scrolls sideways. Tiles
-show a label and a placeholder mark and react to hover and press. Nothing
-launches yet and no tile shows live data.
+**Delivers:** our own home as it looks on a 1920×1080 desktop: an
+always-visible bar and a home of three panels (Now, Apps, All apps), built
+from flat tiles in four sizes. The Metro Start screen from task 001 is kept
+beside it as a reference. Nothing launches yet and nothing shows live data.
 
 **Why this first:** it puts the look on screen so it can be judged, and it
-creates the theme and tile components everything later is built from.
+creates the theme, tile, bar, and panel components everything later is
+built from.
 
 **Tasks:**
 
 | Task | Title |
 |---|---|
-| 001 | Home screen with a static tile grid |
-
-More tasks for this milestone are added after 001 is reviewed.
+| 001 | Home screen with a static tile grid (now the reference screen) |
+| 002 | Our home: the bar and three panels |
+| 003 | First placeholder widgets in the Now panel (not briefed yet) |
