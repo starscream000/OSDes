@@ -14,6 +14,16 @@ Item {
     // Set by whoever places a group on Home; passed on to its tiles.
     property Rearrangement move: null
 
+    // The tile in this group that opens `context`, or null.
+    function launcherFor(context: string): Item {
+        for (let i = 0; i < tileRepeater.count; ++i) {
+            const tile = tileRepeater.itemAt(i) as Tile
+            if (tile && Shell.contextFor(tile.name) === context)
+                return tile
+        }
+        return null
+    }
+
     width: Theme.span(Theme.groupUnits)
     height: Theme.groupHeaderHeight + Theme.span(Theme.groupUnits)
 
@@ -49,6 +59,7 @@ Item {
         height: Theme.span(Theme.groupUnits)
 
         Repeater {
+            id: tileRepeater
             model: group.tiles
 
             delegate: Tile {

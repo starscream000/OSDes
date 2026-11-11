@@ -13,6 +13,8 @@ Row {
     required property Theme.Look look
     // The heading names, in order.
     required property list<string> headings
+    // Type size of the names. Smaller inside an app's mini block.
+    property int textSize: Theme.tabSize
 
     signal tabClicked(int index)
 
@@ -31,7 +33,7 @@ Row {
             text: tab.modelData
             color: tab.index === tabs.currentIndex ? tabs.look.textPrimary : tabs.look.tabDimmed
             font.family: Theme.fontFamily
-            font.pixelSize: Theme.tabSize
+            font.pixelSize: tabs.textSize
             font.weight: Font.Light
 
             MouseArea {

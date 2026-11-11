@@ -37,9 +37,14 @@ Rectangle {
 
                 required property string context
                 required property string name
+                required property string size
+                required property bool shown
 
-                // The app in front, while the home page is showing.
+                // While the home page shows: the app in front (full size), or
+                // the app sitting on Home (mini size) with Home in front.
                 marked: Shell.page === Shell.homePage && Shell.front === appButton.context
+                markedShort: Shell.page === Shell.homePage && Shell.front === Shell.homeContext
+                             && appButton.shown && appButton.size === Shell.miniSize
                 onClicked: Shell.open(appButton.context, appButton)
 
                 Text {

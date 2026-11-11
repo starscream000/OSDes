@@ -71,6 +71,8 @@ QtObject {
         required property color tabDimmed
         // A list row under the pointer.
         required property color rowHover
+        // A small control (mini, enlarge, close) under the pointer.
+        required property color controlHover
     }
 
     // The OS look: Home and the bar. Every surface is a shade of one blue.
@@ -83,6 +85,21 @@ QtObject {
         textDimmed: "#E6EEF8"
         tabDimmed: "#B4CBE5"
         rowHover: "#33649A"
+        controlHover: "#4A7FB8"
+    }
+
+    // Inside an app sitting on Home in mini size: one shade darker than
+    // Home's background, so the block reads as a region of the same surface.
+    readonly property Look homeBlock: Look {
+        background: "#33649A"
+        tileFill: "#4A7FB8"
+        tinted: false
+        textPrimary: "#FFFFFF"
+        textSecondary: "#EEF4FB"
+        textDimmed: "#E6EEF8"
+        tabDimmed: "#B4CBE5"
+        rowHover: "#3A6EA5"
+        controlHover: "#4A7FB8"
     }
 
     // The look of the Metro Start reference page: dark, with tinted tiles.
@@ -95,6 +112,7 @@ QtObject {
         textDimmed: "#6B717B"
         tabDimmed: "#6B717B"
         rowHover: "#22252B"
+        controlHover: "#2A2E35"
     }
 
     readonly property color userPlaceholder: "#3C4250"
@@ -151,6 +169,8 @@ QtObject {
     // Line along a bar button's bottom edge: the active page, or the app in front.
     readonly property color barIndicator: "#FFFFFF"
     readonly property int barIndicatorHeight: 2
+    // A short centred line instead: the app sits on Home in mini size.
+    readonly property int barIndicatorShortWidth: 16
     // Space between items in the bar's right-hand group.
     readonly property int barSpacing: 8
     // Right margin of the clock.
@@ -194,6 +214,23 @@ QtObject {
     readonly property int fileSizeWidth: 120
     readonly property int fileDateWidth: 160
 
+    // ---- App sizes --------------------------------------------------------
+
+    // The square controls that change an app's size or close it.
+    readonly property int controlSize: 32
+    readonly property int controlSpacing: 4
+    // Lines drawn in a control, and the marks they make: a small solid
+    // square (mini), a larger square outline (enlarge), a cross (close).
+    readonly property int controlLineWidth: 2
+    readonly property int controlMiniMarkSize: 8
+    readonly property int controlEnlargeMarkSize: 14
+    readonly property int controlCrossLength: 18
+    // Inside an app's mini block: the inner margin, and its compact headings.
+    readonly property int miniMargin: 16
+    readonly property int miniTabSize: 24
+    readonly property int miniTabSpacing: 24
+    readonly property int miniTabsGap: 16
+
     // ---- Motion -----------------------------------------------------------
 
     // Duration of the move from one home panel to another, in milliseconds.
@@ -206,6 +243,10 @@ QtObject {
     // tile or bar button while the other tiles move aside. At most 300 ms.
     readonly property int contextMoveDuration: 250
     readonly property int contextMoveEasing: Easing.OutCubic
+    // Tile groups moving to their new places when a slot on the Apps panel
+    // opens or closes. At most 300 ms.
+    readonly property int slotMoveDuration: 250
+    readonly property int slotMoveEasing: Easing.OutCubic
 
     // Scale of a tile while it is held down.
     readonly property real tilePressedScale: 0.97

@@ -7,8 +7,9 @@ import OS
 // all move between panels, and the headings always show the current one.
 //
 // While a move between contexts runs, `presence` goes between 0 (gone) and
-// 1 (in front). The headings slide along their line from `headingSide`, and
-// a growing context's content grows out of `growFrom` to fill its area.
+// 1 (in front). The headings and any controls slide along their line from
+// `headingSide`, and a growing context's content grows out of `growFrom`
+// to fill its area.
 FocusScope {
     id: view
 
@@ -17,6 +18,9 @@ FocusScope {
     required property list<string> headings
     // The panels, one per heading. Size them to panelWidth x panelHeight.
     default property alias panels: panelRow.data
+    // Controls at the right end of the heading line, such as an app's size
+    // controls. They move with the headings.
+    property alias controls: controlRow.data
 
     // Index of the panel showing.
     property alias currentIndex: pager.currentIndex
@@ -34,9 +38,20 @@ FocusScope {
     // Whether the content grows out of `growFrom` (content area coordinates).
     property bool grows: false
     property rect growFrom: Qt.rect(0, 0, 0, 0)
+    // The colour the growing content starts in: that of what it grows from.
+    property color growColor: view.look.tileFill
+    // How far the headings and controls are from their place in front.
+    readonly property real headingShift: view.headingSide * (1 - view.presence) * view.headingTravel
 
     function showPanel(index: int) {
         pager.currentIndex = Math.max(0, Math.min(index, view.headings.length - 1))
+    }
+
+    // Show a panel at once, without the sideways move.
+    function jumpTo(index: int) {
+        view.showPanel(index)
+        snapAnimation.stop()
+        pager.contentX = pager.currentIndex * pager.panelWidth
     }
 
     function between(from: real, to: real): real {
@@ -58,11 +73,18 @@ FocusScope {
 
         PanelTabs {
             id: tabs
-            x: view.headingSide * (1 - view.presence) * view.headingTravel
+            x: view.headingShift
             look: view.look
             headings: view.headings
             currentIndex: pager.currentIndex
             onTabClicked: index => view.showPanel(index)
+        }
+
+        Row {
+            id: controlRow
+            x: headingLine.width - Theme.pageMargin - controlRow.width + view.headingShift
+            anchors.verticalCenter: tabs.verticalCenter
+            spacing: Theme.controlSpacing
         }
     }
 
@@ -86,9 +108,9 @@ FocusScope {
                 id: growFill
                 anchors.fill: parent
                 visible: view.grows
-                color: Qt.rgba(view.between(view.look.tileFill.r, view.look.background.r),
-                               view.between(view.look.tileFill.g, view.look.background.g),
-                               view.between(view.look.tileFill.b, view.look.background.b), 1)
+                color: Qt.rgba(view.between(view.growColor.r, view.look.background.r),
+                               view.between(view.growColor.g, view.look.background.g),
+                               view.between(view.growColor.b, view.look.background.b), 1)
             }
 
             // A sideways pager. It always comes to rest with one panel at its
