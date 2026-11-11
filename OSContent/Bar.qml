@@ -6,6 +6,15 @@ import OS
 Rectangle {
     id: bar
 
+    // The button of a running app, or null.
+    function buttonFor(context: string): Item {
+        for (let i = 0; i < runningAppsRepeater.count; ++i) {
+            if (Shell.runningApps.get(i).context === context)
+                return runningAppsRepeater.itemAt(i)
+        }
+        return null
+    }
+
     height: Theme.barHeight
     color: Theme.barBackground
 

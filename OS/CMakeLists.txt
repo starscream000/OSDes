@@ -24,11 +24,15 @@ qt6_add_qml_module(OS
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
+        "AppCatalogue.qml"
+        "AppEntry.qml"
         "Constants.qml"
         "EventListModel.qml"
         "EventListSimulator.qml"
         "FilesModel.qml"
         "HomeModel.qml"
+        "MusicModel.qml"
+        "PhotosModel.qml"
         "RunningAppsModel.qml"
         "Shell.qml"
         "Theme.qml"

@@ -54,6 +54,16 @@ FocusScope {
         pager.contentX = pager.currentIndex * pager.panelWidth
     }
 
+    // Start fresh: the first panel, each scrolled to the top.
+    function reset() {
+        view.jumpTo(0)
+        for (let i = 0; i < panelRow.children.length; ++i) {
+            const panel = panelRow.children[i] as Flickable
+            if (panel)
+                panel.contentY = 0
+        }
+    }
+
     function between(from: real, to: real): real {
         return from + (to - from) * view.presence
     }
