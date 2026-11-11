@@ -3,12 +3,14 @@ import OS
 
 // A flat square button in the bar. Children are centred inside it.
 // It highlights on hover and press. `active` marks the page showing;
-// `marked` draws a thin line along the bottom edge (the app in front).
+// `marked` draws a thin line along the bottom edge (the app in front), and
+// `markedShort` a short centred one (the app sitting on Home in mini size).
 Rectangle {
     id: button
 
     property bool active: false
     property bool marked: false
+    property bool markedShort: false
     readonly property alias hovered: mouseArea.containsMouse
     readonly property alias pressed: mouseArea.pressed
     default property alias content: contentArea.data
@@ -29,11 +31,14 @@ Rectangle {
 
     Rectangle {
         id: indicator
-        anchors.left: parent.left
-        anchors.right: parent.right
+
+        readonly property bool full: button.active || button.marked
+
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
+        width: indicator.full ? button.width : Theme.barIndicatorShortWidth
         height: Theme.barIndicatorHeight
-        visible: button.active || button.marked
+        visible: indicator.full || button.markedShort
         color: Theme.barIndicator
     }
 
