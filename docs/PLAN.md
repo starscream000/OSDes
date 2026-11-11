@@ -26,6 +26,9 @@ daily, which then becomes the shell of a real system.
 7. **One surface.** Opening an app rearranges what is already on screen;
    it does not put a window on top. Home and apps are built from the same
    parts.
+8. **Flexible without overlap.** An app can fill the screen or sit on
+   Home at a smaller size. It is always a region on the grid, never a
+   floating window covering something else.
 
 ## Milestones
 
@@ -61,4 +64,5 @@ built from.
 | 002 | Our home: the bar and three panels |
 | 003 | Give the OS its own colour |
 | 004 | Opening an app rearranges the home (Files prototype) |
+| 005 | An app can sit on Home in a small size (Files prototype) |
 | — | First placeholder widgets in the Now panel (not briefed yet) |

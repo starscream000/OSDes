@@ -20,6 +20,10 @@ complete system interface on those ideas, without copying it.
   headings and menus change to the app's own, its content fills the space,
   and everything else moves aside. Going back plays the same move in
   reverse.
+- **Flexible, without overlapping windows.** An app is not forced to fill
+  the screen. It can also sit on the home screen at a smaller size, as a
+  block on the same grid as everything else, with the rest flowing around
+  it. Nothing ever covers anything else.
 - **Fast and tactile.** Every click or touch gets an immediate response.
   Motion is short, smooth, and never waits on anything else.
 - **Flat and plain.** Solid colour, sharp rectangles, strong type. No
@@ -48,7 +52,8 @@ that shows the interface. It does not yet manage other programs.
 | **Tiles** — four sizes on one grid | Built |
 | **Metro Start reference** — a classic Start screen kept for comparison, reachable from the bar | Built |
 | **The OS colour** — Home and the bar as shades of one blue | Built; shades still being tuned |
-| **Apps as contexts** — Files opens by rearranging the home | Next |
+| **Apps as contexts** — a sample Files app opens by rearranging the home, with no window | Built, with mock data |
+| **App sizes** — an app can sit on Home in a small size, with tiles flowing around it | Next |
 | **Widgets in the Now panel** | Planned |
 
 The live task board is in [`docs/STATUS.md`](docs/STATUS.md).
@@ -57,7 +62,7 @@ The live task board is in [`docs/STATUS.md`](docs/STATUS.md).
 
 | # | Milestone |
 |---|---|
-| 1 | Desktop home: bar, panels, tiles, colour, and the first app opening as a rearrangement of home |
+| 1 | Desktop home: bar, panels, tiles, colour, and the first app opening as a rearrangement of home, in full and small sizes |
 | 2 | Motion and interaction |
 | 3 | One layout for every screen size and input type |
 | 4 | Live tiles: widgets fed with real data |

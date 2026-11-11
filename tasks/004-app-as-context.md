@@ -1,6 +1,6 @@
 # Task 004: Opening an app rearranges the home (Files prototype)
 
-Status: ready
+Status: done
 Branch: task/004-app-as-context
 Depends on: 003 (merged)
 

@@ -3,6 +3,19 @@
 Newest first. A decision listed here is settled; reopen one only with the
 owner.
 
+## 2026-11-11 — Apps have sizes and live on the one grid
+
+Why: the owner does not want the interface rigid, with every app forced to
+fill the screen, and does not want a copy of free-floating, overlapping
+windows either. An open app is always a region of the one surface,
+aligned to the grid. In full size it fills the content area. In mini size
+it sits on Home as a block among the tiles, and the tiles flow around it.
+Nothing overlaps; changing size is a rearrangement.
+Instead of: full screen only, or movable windows that cover each other.
+Still open: more sizes, resizing by dragging, placing a block on any
+panel, and several apps at once. A mini app and a widget on the Now panel
+are close to being the same thing, which a later task should settle.
+
 ## 2026-11-11 — The master merges a pull request as soon as it approves it
 
 Why: the owner does not want to be asked to merge work the master has
