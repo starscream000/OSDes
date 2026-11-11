@@ -1,6 +1,6 @@
 # Task 005: An app can sit on Home in a small size (Files prototype)
 
-Status: ready
+Status: done
 Branch: task/005-mini-app-on-home
 Depends on: 004 (merged)
 

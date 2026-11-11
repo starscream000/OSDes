@@ -65,4 +65,6 @@ built from.
 | 003 | Give the OS its own colour |
 | 004 | Opening an app rearranges the home (Files prototype) |
 | 005 | An app can sit on Home in a small size (Files prototype) |
+| 006 | More apps, from one list (Music and Photos) |
+| — | A Settings app, with the first new control: a switch (not briefed yet) |
 | — | First placeholder widgets in the Now panel (not briefed yet) |

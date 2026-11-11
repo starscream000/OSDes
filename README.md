@@ -53,7 +53,8 @@ that shows the interface. It does not yet manage other programs.
 | **Metro Start reference** — a classic Start screen kept for comparison, reachable from the bar | Built |
 | **The OS colour** — Home and the bar as shades of one blue | Built; shades still being tuned |
 | **Apps as contexts** — a sample Files app opens by rearranging the home, with no window | Built, with mock data |
-| **App sizes** — an app can sit on Home in a small size, with tiles flowing around it | Next |
+| **App sizes** — an app can sit on Home in a small size, with tiles flowing around it | Built, for Files |
+| **More apps** — Music and Photos, and every app described by data in one list | Next |
 | **Widgets in the Now panel** | Planned |
 
 The live task board is in [`docs/STATUS.md`](docs/STATUS.md).

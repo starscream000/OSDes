@@ -3,6 +3,21 @@
 Newest first. A decision listed here is settled; reopen one only with the
 owner.
 
+## 2026-11-11 — Every app is data in one list, with one shape of content
+
+Why: the owner wants more apps that behave like the Files prototype. An
+app is an entry in a catalogue: a name, its headings, and for each heading
+tiles on the grid and rows below them. One view draws that for every app,
+which is what keeps apps uniform with each other and with Home.
+Instead of: a separate screen or component per app.
+
+## 2026-11-11 — One app is full at a time; any number can be mini on Home
+
+Why: it keeps "nothing overlaps" true while letting several apps be
+visible together. Opening another app while one is full hides the first,
+which keeps running.
+Instead of: several full apps side by side, which is left for later.
+
 ## 2026-11-11 — Apps have sizes and live on the one grid
 
 Why: the owner does not want the interface rigid, with every app forced to
