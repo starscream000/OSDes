@@ -1,6 +1,6 @@
 # Task 002: Our home: the bar and three panels
 
-Status: in review
+Status: done
 Branch: task/002-shell-bar-and-home-panels
 Depends on: 001, merged into the main branch
 
