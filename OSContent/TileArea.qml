@@ -1,3 +1,4 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import OS
 
@@ -8,6 +9,8 @@ Flickable {
 
     // A model of groups, such as HomeModel.
     property alias groups: groupRepeater.model
+    // Set by whoever places the area; passed on to its groups.
+    required property Theme.Look look
 
     readonly property real maxContentX: Math.max(0, tileArea.contentWidth - tileArea.width)
 
@@ -25,7 +28,9 @@ Flickable {
         Repeater {
             id: groupRepeater
 
-            delegate: TileGroup {}
+            delegate: TileGroup {
+                look: tileArea.look
+            }
         }
     }
 

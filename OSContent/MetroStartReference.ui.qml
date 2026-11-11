@@ -16,7 +16,7 @@ Rectangle {
     implicitWidth: Constants.width
     implicitHeight: Constants.height
 
-    color: Theme.background
+    color: Theme.reference.background
 
     HomeModel {
         id: homeModel
@@ -27,7 +27,7 @@ Rectangle {
         x: Theme.pageMargin
         y: Theme.headerTop
         text: qsTr("Start")
-        color: Theme.textPrimary
+        color: Theme.reference.textPrimary
         font.family: Theme.fontFamily
         font.pixelSize: Theme.titleSize
         font.weight: Font.Light
@@ -44,7 +44,7 @@ Rectangle {
             id: userName
             anchors.verticalCenter: parent.verticalCenter
             text: qsTr("User")
-            color: Theme.textPrimary
+            color: Theme.reference.textPrimary
             font.family: Theme.fontFamily
             font.pixelSize: Theme.userNameSize
             font.weight: Font.Light
@@ -66,5 +66,6 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.topMargin: Theme.tileAreaTop
         groups: homeModel
+        look: Theme.reference
     }
 }

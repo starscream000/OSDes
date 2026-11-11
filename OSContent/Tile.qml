@@ -10,12 +10,15 @@ Rectangle {
     required property string name
     required property string size
     required property string tint
+    // Set by whoever places the tile. A tinted look uses `tint`; others
+    // give every tile the look's one fill.
+    required property Theme.Look look
 
     readonly property bool showsLabel: tile.size !== "small"
 
     width: Theme.span(Theme.tileColumns(tile.size))
     height: Theme.span(Theme.tileRows(tile.size))
-    color: Theme.tileColor(tile.tint)
+    color: tile.look.tinted ? Theme.tileColor(tile.tint) : tile.look.tileFill
 
     scale: mouseArea.pressed ? Theme.tilePressedScale : 1.0
 
@@ -30,7 +33,7 @@ Rectangle {
         id: mark
         anchors.centerIn: parent
         text: tile.name.charAt(0)
-        color: Theme.tileText
+        color: tile.look.textPrimary
         font.family: Theme.fontFamily
         font.pixelSize: Theme.tileMarkSize(tile.size)
         font.weight: Font.Light
@@ -45,7 +48,7 @@ Rectangle {
         anchors.margins: Theme.tileLabelMargin
         text: tile.name
         elide: Text.ElideRight
-        color: Theme.tileText
+        color: tile.look.textPrimary
         font.family: Theme.fontFamily
         font.pixelSize: Theme.tileLabelSize
     }
@@ -55,7 +58,7 @@ Rectangle {
         anchors.fill: parent
         visible: mouseArea.containsMouse
         color: Theme.transparent
-        border.color: Theme.tileOutline
+        border.color: tile.look.textPrimary
         border.width: Theme.tileOutlineWidth
     }
 

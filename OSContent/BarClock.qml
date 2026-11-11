@@ -11,7 +11,7 @@ Column {
         id: timeText
         anchors.right: parent.right
         text: clock.now.toLocaleTimeString(Qt.locale(), Locale.ShortFormat)
-        color: Theme.textPrimary
+        color: Theme.home.textPrimary
         font.family: Theme.fontFamily
         font.pixelSize: Theme.clockTimeSize
     }
@@ -20,7 +20,7 @@ Column {
         id: dateText
         anchors.right: parent.right
         text: clock.now.toLocaleDateString(Qt.locale(), "ddd d MMM")
-        color: Theme.textSecondary
+        color: Theme.home.textSecondary
         font.family: Theme.fontFamily
         font.pixelSize: Theme.clockDateSize
     }

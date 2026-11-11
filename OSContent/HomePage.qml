@@ -27,6 +27,7 @@ FocusScope {
         id: tabs
         x: Theme.pageMargin
         y: Theme.headerTop
+        look: Theme.home
         currentIndex: panels.currentIndex
         onTabClicked: index => homePage.showPanel(index)
     }
@@ -99,16 +100,19 @@ FocusScope {
             NowPanel {
                 width: panels.panelWidth
                 height: panels.height
+                look: Theme.home
             }
 
             AppsPanel {
                 width: panels.panelWidth
                 height: panels.height
+                look: Theme.home
             }
 
             AllAppsPanel {
                 width: panels.panelWidth
                 height: panels.height
+                look: Theme.home
             }
         }
 

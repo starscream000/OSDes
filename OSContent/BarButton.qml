@@ -34,7 +34,7 @@ Rectangle {
         anchors.bottom: parent.bottom
         height: Theme.barIndicatorHeight
         visible: button.active || button.marked
-        color: button.active ? Theme.barIndicatorActive : Theme.barIndicatorFront
+        color: Theme.barIndicator
     }
 
     MouseArea {
