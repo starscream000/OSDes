@@ -23,6 +23,9 @@ daily, which then becomes the shell of a real system.
 5. **Discoverable.** No action exists only behind an invisible gesture.
 6. **Widgets are guests.** A tile's content comes from outside the shell
    through a fixed contract, so a broken widget cannot freeze the shell.
+7. **One surface.** Opening an app rearranges what is already on screen;
+   it does not put a window on top. Home and apps are built from the same
+   parts.
 
 ## Milestones
 
@@ -56,4 +59,6 @@ built from.
 |---|---|
 | 001 | Home screen with a static tile grid (now the reference screen) |
 | 002 | Our home: the bar and three panels |
-| 003 | First placeholder widgets in the Now panel (not briefed yet) |
+| 003 | Give the OS its own colour |
+| 004 | Opening an app rearranges the home (Files prototype) |
+| — | First placeholder widgets in the Now panel (not briefed yet) |

@@ -3,6 +3,32 @@
 Newest first. A decision listed here is settled; reopen one only with the
 owner.
 
+## 2026-11-11 — Apps are contexts, not windows
+
+Why: the owner wants the interface so uniform that opening an app barely
+feels like going to a "window". The home rearranges to reveal the app: the
+headings, titles, and menus change to the app's own, the content area
+fills with the app's content, and the other items move aside. Home and
+every app are drawn with the same parts, grid, colours, and type.
+Instead of: framed windows that appear on top of a desktop.
+Limit: this full blending is for apps written for this shell, which hand
+it their headings and content. Ordinary programs draw their own insides;
+the shell can show them frameless under its own headings but cannot
+restyle them. How those are handled is not decided yet.
+
+## 2026-11-11 — Every surface is a shade of one colour
+
+Why: "every component tightly uniform". Depth comes from lighter and
+darker shades of the OS colour, not from extra hues, borders, or shadows.
+Tiles on Home share one fill.
+Instead of: a different colour per tile, as on the Metro Start reference.
+
+## 2026-11-11 — The OS colour is Windows 2000 desktop blue (#3A6EA5), on trial
+
+Why: the owner wants a distinct colour with a computer, digital feel, and
+chose to try this one first. It may change after it is seen on screen.
+Instead of: the neutral near-black background used so far.
+
 ## 2026-11-11 — The Metro Start screen is kept as a reference
 
 Why: the owner wants the screen from task 001 kept, not deleted, so our own
