@@ -3,6 +3,15 @@
 Newest first. A decision listed here is settled; reopen one only with the
 owner.
 
+## 2026-11-11 — The README is a planning file kept by the master
+
+Why: the owner wants a README that states the vision and is kept up to
+date as the vision changes. It contains no code, so the master commits it
+straight to the main branch like the plan, and updates it after every
+merge and design decision.
+Instead of: a README written once, or one that goes through a pull
+request each time.
+
 ## 2026-11-11 — Apps are contexts, not windows
 
 Why: the owner wants the interface so uniform that opening an app barely
