@@ -3,6 +3,16 @@
 Newest first. A decision listed here is settled; reopen one only with the
 owner.
 
+## 2026-11-11 — The master merges a pull request as soon as it approves it
+
+Why: the owner does not want to be asked to merge work the master has
+already found acceptable. This is a standing order for this project and
+replaces the protocol's default of waiting for a merge order each time.
+The master still does not merge when its verdict is "changes requested",
+and still reports every merge and anything it could not verify.
+Instead of: the master approving and then waiting for the owner to say
+"merge".
+
 ## 2026-11-11 — The README is a planning file kept by the master
 
 Why: the owner wants a README that states the vision and is kept up to

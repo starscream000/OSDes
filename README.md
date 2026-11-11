@@ -47,8 +47,8 @@ that shows the interface. It does not yet manage other programs.
 | **Home** — three panels side by side: Now (widgets), Apps (pinned tiles), All apps | Built. Apps shows tiles; the other two are empty |
 | **Tiles** — four sizes on one grid | Built |
 | **Metro Start reference** — a classic Start screen kept for comparison, reachable from the bar | Built |
-| **The OS colour** — everything as shades of one blue | Next |
-| **Apps as contexts** — Files opens by rearranging the home | Planned |
+| **The OS colour** — Home and the bar as shades of one blue | Built; shades still being tuned |
+| **Apps as contexts** — Files opens by rearranging the home | Next |
 | **Widgets in the Now panel** | Planned |
 
 The live task board is in [`docs/STATUS.md`](docs/STATUS.md).

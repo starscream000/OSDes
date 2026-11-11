@@ -7,5 +7,5 @@ blocked.
 |---|---|---|---|---|
 | 001 | Home screen with a static tile grid | done | [#1](https://github.com/starscream000/OSDes/pull/1) | Merged 2026-11-11. Follow-ups: smooth wheel scrolling (milestone 2); unused `backgroundColor` in `Constants.qml` |
 | 002 | Our home: the bar and three panels | done | [#2](https://github.com/starscream000/OSDes/pull/2) | Merged 2026-11-11. Follow-ups: tooltips and keyboard access for bar buttons; what the last panel shows in its empty strip (owner to decide) |
-| 003 | Give the OS its own colour | in review | [#3](https://github.com/starscream000/OSDes/pull/3) | Master approved with one item open: three colour pairs miss the contrast rule, kept on the owner's instruction until the colours are tuned by eye. Waiting for the merge order |
-| 004 | Opening an app rearranges the home (Files prototype) | ready | — | Start only after task 003 is merged |
+| 003 | Give the OS its own colour | done | [#3](https://github.com/starscream000/OSDes/pull/3) | Merged 2026-11-11. Follow-up: three colour pairs miss the contrast rule (tile labels, bar hover, bar pressed); to be settled when the owner tunes the colours by eye |
+| 004 | Opening an app rearranges the home (Files prototype) | ready | — | Task 003 is merged; a worker may start |
