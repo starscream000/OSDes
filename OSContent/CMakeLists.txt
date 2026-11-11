@@ -15,7 +15,6 @@ qt6_add_qml_module(OSContent
         "Bar.qml"
         "BarButton.qml"
         "BarClock.qml"
-        "HomePage.qml"
         "MetroStartReference.ui.qml"
         "NowPanel.ui.qml"
         "PanelTabs.qml"
@@ -23,6 +22,11 @@ qt6_add_qml_module(OSContent
         "Tile.qml"
         "TileArea.qml"
         "TileGroup.qml"
+        "FileRow.qml"
+        "FolderView.qml"
+        "ContextView.qml"
+        "Rearrangement.qml"
+        "ContextStage.qml"
 )
 
 

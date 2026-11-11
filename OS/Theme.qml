@@ -69,6 +69,8 @@ QtObject {
         required property color textDimmed
         // Tabs that are not current. They are large text, so they may be dimmer.
         required property color tabDimmed
+        // A list row under the pointer.
+        required property color rowHover
     }
 
     // The OS look: Home and the bar. Every surface is a shade of one blue.
@@ -80,6 +82,7 @@ QtObject {
         textSecondary: "#EEF4FB"
         textDimmed: "#E6EEF8"
         tabDimmed: "#B4CBE5"
+        rowHover: "#33649A"
     }
 
     // The look of the Metro Start reference page: dark, with tinted tiles.
@@ -91,6 +94,7 @@ QtObject {
         textSecondary: "#A9AFB8"
         textDimmed: "#6B717B"
         tabDimmed: "#6B717B"
+        rowHover: "#22252B"
     }
 
     readonly property color userPlaceholder: "#3C4250"
@@ -177,6 +181,19 @@ QtObject {
     readonly property int tabSpacing: 40
     readonly property int panelTextSize: 20
 
+    // ---- Files ------------------------------------------------------------
+
+    // Space between the folder tiles and the file rows below them.
+    readonly property int folderFilesGap: 40
+    readonly property int fileRowHeight: 40
+    // Inner left and right margin of a file row.
+    readonly property int fileRowPadding: 12
+    readonly property int fileNameSize: 16
+    readonly property int fileDetailSize: 14
+    // Widths of the size and date columns, right-aligned.
+    readonly property int fileSizeWidth: 120
+    readonly property int fileDateWidth: 160
+
     // ---- Motion -----------------------------------------------------------
 
     // Duration of the move from one home panel to another, in milliseconds.
@@ -184,6 +201,11 @@ QtObject {
     // A drag released faster than this (pixels per second) moves to the
     // next panel even if it covered less than half a panel.
     readonly property real panelFlickVelocity: 400
+
+    // The move between Home and an app: the app's content grows out of a
+    // tile or bar button while the other tiles move aside. At most 300 ms.
+    readonly property int contextMoveDuration: 250
+    readonly property int contextMoveEasing: Easing.OutCubic
 
     // Scale of a tile while it is held down.
     readonly property real tilePressedScale: 0.97

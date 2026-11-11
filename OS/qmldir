@@ -4,5 +4,6 @@ singleton Theme 1.0 Theme.qml
 singleton Shell 1.0 Shell.qml
 HomeModel 1.0 HomeModel.qml
 RunningAppsModel 1.0 RunningAppsModel.qml
+FilesModel 1.0 FilesModel.qml
 EventListSimulator 1.0 EventListSimulator.qml
 EventListModel 1.0 EventListModel.qml

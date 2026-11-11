@@ -31,6 +31,7 @@ qt6_add_qml_module(OS
         "RunningAppsModel.qml"
         "Shell.qml"
         "Theme.qml"
+        "FilesModel.qml"
 )
 
 

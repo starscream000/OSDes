@@ -9,10 +9,6 @@ Rectangle {
     height: Theme.barHeight
     color: Theme.barBackground
 
-    RunningAppsModel {
-        id: runningApps
-    }
-
     Row {
         id: leftItems
         anchors.left: parent.left
@@ -20,8 +16,8 @@ Rectangle {
 
         BarButton {
             id: homeButton
-            active: Shell.page === Shell.homePage
-            onClicked: Shell.page = Shell.homePage
+            active: Shell.page === Shell.homePage && Shell.front === Shell.homeContext
+            onClicked: Shell.goHome()
 
             Rectangle {
                 id: homeMark
@@ -34,16 +30,17 @@ Rectangle {
 
         Repeater {
             id: runningAppsRepeater
-            model: runningApps
+            model: Shell.runningApps
 
             delegate: BarButton {
                 id: appButton
 
+                required property string context
                 required property string name
-                required property bool front
 
-                marked: appButton.front
-                onClicked: console.log("Running app clicked:", appButton.name)
+                // The app in front, while the home page is showing.
+                marked: Shell.page === Shell.homePage && Shell.front === appButton.context
+                onClicked: Shell.open(appButton.context, appButton)
 
                 Text {
                     id: appLetter
