@@ -11,8 +11,17 @@ qt6_add_qml_module(OSContent
     QML_FILES
         "App.qml"
         "Screen01.ui.qml"
+        "PanelTabs.qml"
+        "HomePage.qml"
         "TileGroup.qml"
+        "AllAppsPanel.ui.qml"
+        "AppsPanel.qml"
         "Tile.qml"
+        "NowPanel.ui.qml"
+        "Bar.qml"
+        "BarButton.qml"
+        "MetroStartReference.ui.qml"
+        "BarClock.qml"
         "TileArea.qml"
 )
 

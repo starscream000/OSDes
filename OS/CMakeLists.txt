@@ -11,6 +11,11 @@ set_source_files_properties(Theme.qml
         QT_QML_SINGLETON_TYPE true
 )
 
+set_source_files_properties(Shell.qml
+    PROPERTIES
+        QT_QML_SINGLETON_TYPE true
+)
+
 
 
 qt_add_library(OS STATIC)
@@ -23,6 +28,8 @@ qt6_add_qml_module(OS
         "EventListModel.qml"
         "EventListSimulator.qml"
         "Theme.qml"
+        "Shell.qml"
+        "RunningAppsModel.qml"
         "HomeModel.qml"
 )
 
