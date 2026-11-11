@@ -27,10 +27,10 @@ qt6_add_qml_module(OS
         "Constants.qml"
         "EventListModel.qml"
         "EventListSimulator.qml"
-        "Theme.qml"
-        "Shell.qml"
-        "RunningAppsModel.qml"
         "HomeModel.qml"
+        "RunningAppsModel.qml"
+        "Shell.qml"
+        "Theme.qml"
 )
 
 
