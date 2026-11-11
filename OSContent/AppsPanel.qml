@@ -1,3 +1,4 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import OS
 
@@ -5,6 +6,9 @@ import OS
 // and wrapping onto new rows. Scrolls up and down when the rows do not fit.
 Flickable {
     id: appsPanel
+
+    // Set by whoever places the panel; passed on to its groups.
+    required property Theme.Look look
 
     contentWidth: appsPanel.width
     contentHeight: groupFlow.height + Theme.panelBottomMargin
@@ -26,7 +30,9 @@ Flickable {
             id: groupRepeater
             model: homeModel
 
-            delegate: TileGroup {}
+            delegate: TileGroup {
+                look: appsPanel.look
+            }
         }
     }
 }

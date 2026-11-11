@@ -28,7 +28,7 @@ Rectangle {
                 anchors.centerIn: parent
                 width: Theme.barHomeMarkSize
                 height: Theme.barHomeMarkSize
-                color: Theme.textPrimary
+                color: Theme.home.textPrimary
             }
         }
 
@@ -49,7 +49,7 @@ Rectangle {
                     id: appLetter
                     anchors.centerIn: parent
                     text: appButton.name.charAt(0)
-                    color: Theme.textPrimary
+                    color: Theme.home.textPrimary
                     font.family: Theme.fontFamily
                     font.pixelSize: Theme.barLetterSize
                     font.weight: Font.Light
@@ -75,7 +75,7 @@ Rectangle {
                 id: referenceLabel
                 anchors.centerIn: parent
                 text: qsTr("Reference")
-                color: Theme.textPrimary
+                color: Theme.home.textPrimary
                 font.family: Theme.fontFamily
                 font.pixelSize: Theme.barTextSize
             }
@@ -96,7 +96,7 @@ Rectangle {
                     delegate: Rectangle {
                         width: Theme.barLineWidth
                         height: Theme.barLineHeight
-                        color: Theme.textPrimary
+                        color: Theme.home.textPrimary
                     }
                 }
             }

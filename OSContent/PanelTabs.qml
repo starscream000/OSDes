@@ -8,6 +8,8 @@ Row {
     id: tabs
 
     property int currentIndex: 0
+    // Set by whoever places the tabs.
+    required property Theme.Look look
 
     signal tabClicked(int index)
 
@@ -24,7 +26,7 @@ Row {
             required property int index
 
             text: tab.modelData
-            color: tab.index === tabs.currentIndex ? Theme.textPrimary : Theme.textDimmed
+            color: tab.index === tabs.currentIndex ? tabs.look.textPrimary : tabs.look.tabDimmed
             font.family: Theme.fontFamily
             font.pixelSize: Theme.tabSize
             font.weight: Font.Light

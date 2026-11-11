@@ -50,17 +50,53 @@ QtObject {
         return theme.tileSizes[size] ? theme.tileSizes[size].markSize : theme.tileSizes.small.markSize
     }
 
-    // ---- Colours ----------------------------------------------------------
+    // ---- Looks ------------------------------------------------------------
 
-    readonly property color background: "#15171B"
-    readonly property color textPrimary: "#FFFFFF"
-    readonly property color textSecondary: "#A9AFB8"
-    readonly property color tileText: "#FFFFFF"
-    readonly property color tileOutline: "#FFFFFF"
+    // The colours of one look. A tile, group, or panel is given its look by
+    // whoever places it, and reads every colour from that look.
+    component Look: QtObject {
+        // Behind the page.
+        required property color background
+        // Fill of every tile, unless the look is tinted.
+        required property color tileFill
+        // A tinted look fills each tile with its own colour from the tile data.
+        required property bool tinted
+        // Primary text, tile marks and labels, and the tile outline on hover.
+        required property color textPrimary
+        // Group labels, the date in the clock.
+        required property color textSecondary
+        // Placeholder lines.
+        required property color textDimmed
+        // Tabs that are not current. They are large text, so they may be dimmer.
+        required property color tabDimmed
+    }
+
+    // The OS look: Home and the bar. Every surface is a shade of one blue.
+    readonly property Look home: Look {
+        background: "#3A6EA5"
+        tileFill: "#4A7FB8"
+        tinted: false
+        textPrimary: "#FFFFFF"
+        textSecondary: "#EEF4FB"
+        textDimmed: "#E6EEF8"
+        tabDimmed: "#B4CBE5"
+    }
+
+    // The look of the Metro Start reference page: dark, with tinted tiles.
+    readonly property Look reference: Look {
+        background: "#15171B"
+        tileFill: theme.tileColors.cobalt
+        tinted: true
+        textPrimary: "#FFFFFF"
+        textSecondary: "#A9AFB8"
+        textDimmed: "#6B717B"
+        tabDimmed: "#6B717B"
+    }
+
     readonly property color userPlaceholder: "#3C4250"
     readonly property color transparent: "transparent"
 
-    // Flat tile colours, referred to by name from the tile data.
+    // Flat tile colours for tinted looks, referred to by name from the tile data.
     readonly property var tileColors: ({
         "cobalt":  "#2456C7",
         "teal":    "#00897B",
@@ -103,13 +139,13 @@ QtObject {
 
     // Height of the bar, and the side of each square bar button.
     readonly property int barHeight: 48
-    readonly property color barBackground: "#22252B"
-    readonly property color barButtonHover: "#30343C"
-    readonly property color barButtonPressed: "#3E434D"
-    readonly property color barButtonActive: "#2B2F37"
+    // The bar is always in the OS look; its text uses Theme.home.
+    readonly property color barBackground: "#2B5482"
+    readonly property color barButtonHover: "#4A7FB8"
+    readonly property color barButtonPressed: "#5A8FC8"
+    readonly property color barButtonActive: "#346299"
     // Line along a bar button's bottom edge: the active page, or the app in front.
-    readonly property color barIndicatorActive: "#4C8DFF"
-    readonly property color barIndicatorFront: "#FFFFFF"
+    readonly property color barIndicator: "#FFFFFF"
     readonly property int barIndicatorHeight: 2
     // Space between items in the bar's right-hand group.
     readonly property int barSpacing: 8
@@ -131,8 +167,6 @@ QtObject {
 
     // ---- Home panels ------------------------------------------------------
 
-    // Dimmed text: tabs that are not current, and placeholder lines.
-    readonly property color textDimmed: "#6B717B"
     // How much of the next panel stays visible beside the current one.
     readonly property int panelPeek: 160
     // Top of the panels, measured from the top of the page area.

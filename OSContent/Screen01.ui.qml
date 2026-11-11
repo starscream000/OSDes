@@ -16,7 +16,7 @@ Rectangle {
     width: Constants.width
     height: Constants.height
 
-    color: Theme.background
+    color: Theme.home.background
 
     Item {
         id: pageArea

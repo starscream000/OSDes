@@ -1,3 +1,4 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import OS
 
@@ -8,6 +9,8 @@ Item {
 
     required property string title
     required property var tiles
+    // Set by whoever places the group; passed on to its tiles.
+    required property Theme.Look look
 
     width: Theme.span(Theme.groupUnits)
     height: Theme.groupHeaderHeight + Theme.span(Theme.groupUnits)
@@ -17,7 +20,7 @@ Item {
         anchors.left: parent.left
         anchors.top: parent.top
         text: group.title
-        color: Theme.textSecondary
+        color: group.look.textSecondary
         font.family: Theme.fontFamily
         font.pixelSize: Theme.groupLabelSize
     }
@@ -32,6 +35,7 @@ Item {
             model: group.tiles
 
             delegate: Tile {
+                look: group.look
                 required property int column
                 required property int row
 

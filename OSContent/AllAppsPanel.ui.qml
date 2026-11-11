@@ -11,11 +11,15 @@ import OS
 Item {
     id: allAppsPanel
 
+    // Set by whoever places the panel. The default lets the visual editor
+    // preview this file on its own.
+    property Theme.Look look: Theme.home
+
     Text {
         id: placeholder
         x: Theme.pageMargin
         text: qsTr("All your apps will be listed here.")
-        color: Theme.textDimmed
+        color: allAppsPanel.look.textDimmed
         font.family: Theme.fontFamily
         font.pixelSize: Theme.panelTextSize
     }
