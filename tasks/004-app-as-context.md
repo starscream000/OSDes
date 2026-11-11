@@ -96,6 +96,10 @@ sample entries.
 - `OS/qmldir`
 - `OS/CMakeLists.txt` — only the `QML_FILES` list and singleton entries
 
+Qt Design Studio re-sorts the two `QML_FILES` lists alphabetically whenever
+it is open. In this task, commit them in that sorted order so the churn
+stops. Change nothing else in those files.
+
 ## Done when
 
 - [ ] Clicking the Files tile turns the home into Files as described in

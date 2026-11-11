@@ -1,6 +1,6 @@
 # Task 003: Give the OS its own colour
 
-Status: ready
+Status: in review
 Branch: task/003-os-colour
 Depends on: 002 (merged)
 
