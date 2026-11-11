@@ -5,5 +5,9 @@ singleton Shell 1.0 Shell.qml
 HomeModel 1.0 HomeModel.qml
 RunningAppsModel 1.0 RunningAppsModel.qml
 FilesModel 1.0 FilesModel.qml
+MusicModel 1.0 MusicModel.qml
+PhotosModel 1.0 PhotosModel.qml
+AppEntry 1.0 AppEntry.qml
+AppCatalogue 1.0 AppCatalogue.qml
 EventListSimulator 1.0 EventListSimulator.qml
 EventListModel 1.0 EventListModel.qml

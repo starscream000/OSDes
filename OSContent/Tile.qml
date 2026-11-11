@@ -8,6 +8,7 @@ Rectangle {
     id: tile
 
     required property string name
+    // small, medium, wide, or large. A tile with no size given is medium.
     required property string size
     required property string tint
     // Set by whoever places the tile. A tinted look uses `tint`; others
@@ -19,10 +20,11 @@ Rectangle {
     // Where this tile goes when an app is fully in front.
     property point away: Qt.point(0, 0)
 
-    readonly property bool showsLabel: tile.size !== "small"
+    readonly property string shape: tile.size !== "" ? tile.size : "medium"
+    readonly property bool showsLabel: tile.shape !== "small"
 
-    width: Theme.span(Theme.tileColumns(tile.size))
-    height: Theme.span(Theme.tileRows(tile.size))
+    width: Theme.span(Theme.tileColumns(tile.shape))
+    height: Theme.span(Theme.tileRows(tile.shape))
     color: tile.look.tinted ? Theme.tileColor(tile.tint) : tile.look.tileFill
 
     scale: mouseArea.pressed ? Theme.tilePressedScale : 1.0
@@ -51,7 +53,7 @@ Rectangle {
         text: tile.name.charAt(0)
         color: tile.look.textPrimary
         font.family: Theme.fontFamily
-        font.pixelSize: Theme.tileMarkSize(tile.size)
+        font.pixelSize: Theme.tileMarkSize(tile.shape)
         font.weight: Font.Light
     }
 

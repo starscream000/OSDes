@@ -201,18 +201,18 @@ QtObject {
     readonly property int tabSpacing: 40
     readonly property int panelTextSize: 20
 
-    // ---- Files ------------------------------------------------------------
+    // ---- App content ------------------------------------------------------
 
-    // Space between the folder tiles and the file rows below them.
-    readonly property int folderFilesGap: 40
-    readonly property int fileRowHeight: 40
-    // Inner left and right margin of a file row.
-    readonly property int fileRowPadding: 12
-    readonly property int fileNameSize: 16
-    readonly property int fileDetailSize: 14
-    // Widths of the size and date columns, right-aligned.
-    readonly property int fileSizeWidth: 120
-    readonly property int fileDateWidth: 160
+    // Space between an app's tiles and the rows below them.
+    readonly property int tilesRowsGap: 40
+    readonly property int rowHeight: 40
+    // Inner left and right margin of a row.
+    readonly property int rowPadding: 12
+    readonly property int rowNameSize: 16
+    readonly property int rowDetailSize: 14
+    // Widths of a row's two detail columns, right-aligned.
+    readonly property int rowDetailWidth: 180
+    readonly property int rowSecondDetailWidth: 140
 
     // ---- App sizes --------------------------------------------------------
 

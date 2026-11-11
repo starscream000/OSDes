@@ -29,6 +29,8 @@ Rectangle {
             id: contextStage
             anchors.fill: parent
             visible: Shell.page === Shell.homePage
+            bar: bar
+            pressWatcher: pressWatcher
         }
 
         MetroStartReference {
@@ -43,5 +45,10 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
+    }
+
+    PressWatcher {
+        id: pressWatcher
+        anchors.fill: parent
     }
 }
