@@ -9,20 +9,24 @@ qt6_add_qml_module(OSContent
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
-        "App.qml"
-        "Screen01.ui.qml"
-        "PanelTabs.qml"
-        "HomePage.qml"
-        "TileGroup.qml"
         "AllAppsPanel.ui.qml"
+        "App.qml"
         "AppsPanel.qml"
-        "Tile.qml"
-        "NowPanel.ui.qml"
         "Bar.qml"
         "BarButton.qml"
-        "MetroStartReference.ui.qml"
         "BarClock.qml"
+        "MetroStartReference.ui.qml"
+        "NowPanel.ui.qml"
+        "PanelTabs.qml"
+        "Screen01.ui.qml"
+        "Tile.qml"
         "TileArea.qml"
+        "TileGroup.qml"
+        "FileRow.qml"
+        "FolderView.qml"
+        "ContextView.qml"
+        "Rearrangement.qml"
+        "ContextStage.qml"
 )
 
 

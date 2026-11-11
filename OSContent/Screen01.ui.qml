@@ -25,8 +25,8 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: bar.top
 
-        HomePage {
-            id: homePage
+        ContextStage {
+            id: contextStage
             anchors.fill: parent
             visible: Shell.page === Shell.homePage
         }

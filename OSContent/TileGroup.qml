@@ -11,18 +11,35 @@ Item {
     required property var tiles
     // Set by whoever places the group; passed on to its tiles.
     required property Theme.Look look
+    // Set by whoever places a group on Home; passed on to its tiles.
+    property Rearrangement move: null
 
     width: Theme.span(Theme.groupUnits)
     height: Theme.groupHeaderHeight + Theme.span(Theme.groupUnits)
 
     Text {
         id: groupLabel
+
+        // Where the label goes when an app is fully in front.
+        property point away: Qt.point(0, 0)
+
         anchors.left: parent.left
         anchors.top: parent.top
+        transform: Translate {
+            x: group.move ? groupLabel.away.x * group.move.progress : 0
+            y: group.move ? groupLabel.away.y * group.move.progress : 0
+        }
         text: group.title
         color: group.look.textSecondary
         font.family: Theme.fontFamily
         font.pixelSize: Theme.groupLabelSize
+    }
+
+    Connections {
+        target: group.move
+        function onStarted() {
+            groupLabel.away = group.move.offsetFor(groupLabel)
+        }
     }
 
     Item {
@@ -36,6 +53,7 @@ Item {
 
             delegate: Tile {
                 look: group.look
+                move: group.move
                 required property int column
                 required property int row
 

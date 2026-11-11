@@ -13,6 +13,11 @@ Rectangle {
     // Set by whoever places the tile. A tinted look uses `tint`; others
     // give every tile the look's one fill.
     required property Theme.Look look
+    // Set by whoever places a tile on Home. A tile with a move opens the app
+    // context of the same name, and moves aside while an app is in front.
+    property Rearrangement move: null
+    // Where this tile goes when an app is fully in front.
+    property point away: Qt.point(0, 0)
 
     readonly property bool showsLabel: tile.size !== "small"
 
@@ -21,6 +26,17 @@ Rectangle {
     color: tile.look.tinted ? Theme.tileColor(tile.tint) : tile.look.tileFill
 
     scale: mouseArea.pressed ? Theme.tilePressedScale : 1.0
+    transform: Translate {
+        x: tile.move ? tile.away.x * tile.move.progress : 0
+        y: tile.move ? tile.away.y * tile.move.progress : 0
+    }
+
+    Connections {
+        target: tile.move
+        function onStarted() {
+            tile.away = tile.move.offsetFor(tile)
+        }
+    }
 
     Behavior on scale {
         NumberAnimation {
@@ -66,6 +82,12 @@ Rectangle {
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: true
-        onClicked: console.log("Tile clicked:", tile.name)
+        onClicked: {
+            const context = tile.move ? Shell.contextFor(tile.name) : ""
+            if (context !== "")
+                Shell.open(context, tile)
+            else
+                console.log("Tile clicked:", tile.name)
+        }
     }
 }

@@ -1,8 +1,7 @@
 import QtQuick
 
-// Sample running apps shown in the bar. `front` marks the app in front.
+// The app contexts that have been opened, in the order they were opened.
+// Each element has `context` (an id from Shell) and `name` (shown in the
+// bar). Starts empty; Shell.open() adds to it.
 ListModel {
-    ListElement { name: qsTr("Browser");  front: true }
-    ListElement { name: qsTr("Terminal"); front: false }
-    ListElement { name: qsTr("Files");    front: false }
 }

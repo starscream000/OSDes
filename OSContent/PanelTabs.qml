@@ -2,14 +2,17 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import OS
 
-// The names of the home panels. The current one is in the primary text
-// colour, the others are dimmed. Clicking a name asks for that panel.
+// The headings of a context, such as Home's panels. The current one is in
+// the primary text colour, the others are dimmed. Clicking a name asks for
+// that heading.
 Row {
     id: tabs
 
     property int currentIndex: 0
     // Set by whoever places the tabs.
     required property Theme.Look look
+    // The heading names, in order.
+    required property list<string> headings
 
     signal tabClicked(int index)
 
@@ -17,7 +20,7 @@ Row {
 
     Repeater {
         id: tabRepeater
-        model: [qsTr("Now"), qsTr("Apps"), qsTr("All apps")]
+        model: tabs.headings
 
         delegate: Text {
             id: tab

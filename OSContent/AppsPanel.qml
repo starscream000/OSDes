@@ -9,6 +9,8 @@ Flickable {
 
     // Set by whoever places the panel; passed on to its groups.
     required property Theme.Look look
+    // Set by whoever places the panel on Home; passed on to its groups.
+    property Rearrangement move: null
 
     contentWidth: appsPanel.width
     contentHeight: groupFlow.height + Theme.panelBottomMargin
@@ -32,6 +34,7 @@ Flickable {
 
             delegate: TileGroup {
                 look: appsPanel.look
+                move: appsPanel.move
             }
         }
     }
